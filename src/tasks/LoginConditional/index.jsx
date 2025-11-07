@@ -2,7 +2,7 @@ import { useState } from "react";
 import LoginStatus from "./LoginStatus";
 
 function LoginConditionalParent() {
-  const [user, setUser] = useState({ name: "Manu", isLoggedIn: true });
+  const [user, setUser] = useState({ name: "Manu", isLoggedIn: false });
 
   return (
     <div>

@@ -1,10 +1,10 @@
 import { useState } from "react";
-import WeatherInputParent from "./tasks/WeatherInput/WeatherInputParent";
-import AttendanceParent from "./tasks/Attendance/AttendanceParent";
-import LoginConditionalParent from "./tasks/LoginConditional/LoginConditionalParent";
-import SimpleWeatherParent from "./tasks/SimpleWeather/SimpleWeatherParent";
-import ColorParent from "./tasks/PrimaryColor/ColorParent";
-import TableRenderParent from "./tasks/TableRender/TableRenderParent";
+import WeatherInputParent from "./tasks/WeatherInput";
+import AttendanceParent from "./tasks/Attendance";
+import LoginConditionalParent from "./tasks/LoginConditional";
+import SimpleWeatherParent from "./tasks/SimpleWeather";
+import ColorParent from "./tasks/PrimaryColor";
+import TableRenderParent from "./tasks/TableRender";
 import "./App.css";
 
 function App() {
@@ -19,7 +19,9 @@ function App() {
   const [selectTask, setSelectTask] = useState("Attendance");
 
   const tasks = Object.keys(allTasks);
+
   const CurrentTask = allTasks[selectTask];
+
   return (
     <div>
       <select
