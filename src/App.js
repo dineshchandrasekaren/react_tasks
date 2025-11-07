@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import WeatherInputParent from "./tasks/WeatherInput/WeatherInputParent";
+import AttendanceParent from "./tasks/Attendance/AttendanceParent";
+import LoginConditionalParent from "./tasks/LoginConditional/LoginConditionalParent";
+import SimpleWeatherParent from "./tasks/SimpleWeather/SimpleWeatherParent";
+import ColorParent from "./tasks/PrimaryColor/ColorParent";
+import TableRenderParent from "./tasks/TableRender/TableRenderParent";
+import "./App.css";
 
 function App() {
+  const allTasks = {
+    Attendance: AttendanceParent,
+    "Weather Input": WeatherInputParent,
+    "Login Conditional": LoginConditionalParent,
+    "Simple Weather": SimpleWeatherParent,
+    "Primary Color": ColorParent,
+    "Table Rendering": TableRenderParent,
+  };
+  const [selectTask, setSelectTask] = useState("Attendance");
+
+  const tasks = Object.keys(allTasks);
+  const CurrentTask = allTasks[selectTask];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <select
+        value={selectTask}
+        onChange={(e) => setSelectTask(e.target.value)}
+        style={{ width: "400px", margin: "auto", marginBottom: "2rem" }}
+      >
+        {tasks.map((task, i) => (
+          <option value={task} key={task}>{`Task ${i + 1}: ${task}`}</option>
+        ))}
+      </select>
+
+      <CurrentTask />
     </div>
   );
 }
