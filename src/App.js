@@ -24,7 +24,10 @@ function App() {
     <div>
       <select
         value={selectTask}
-        onChange={(e) => setSelectTask(e.target.value)}
+        onChange={(e) => {
+          document.title = e.target.value;
+          setSelectTask(e.target.value);
+        }}
         style={{ width: "400px", margin: "auto", marginBottom: "2rem" }}
       >
         {tasks.map((task, i) => (
