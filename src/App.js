@@ -5,7 +5,9 @@ import LoginConditionalParent from "./tasks/LoginConditional";
 import SimpleWeatherParent from "./tasks/SimpleWeather";
 import ColorParent from "./tasks/PrimaryColor";
 import TableRenderParent from "./tasks/TableRender";
-import "./App.css";
+import UserInputDetails from "./tasks/UserInputDetails";
+import DropDownSelect from "./tasks/DropDownSelect";
+import ConditionalLoginWithSideEffect from "./tasks/ConditionalLoginWithSideEffect";
 
 function App() {
   const allTasks = {
@@ -15,6 +17,9 @@ function App() {
     "Simple Weather": SimpleWeatherParent,
     "Primary Color": ColorParent,
     "Table Rendering": TableRenderParent,
+    "User Input Details": UserInputDetails,
+    "Dropdown Select Student": DropDownSelect,
+    "Conditional Login with Side Effect": ConditionalLoginWithSideEffect,
   };
   const [selectTask, setSelectTask] = useState("Attendance");
 
@@ -30,14 +35,16 @@ function App() {
           document.title = e.target.value;
           setSelectTask(e.target.value);
         }}
-        style={{ width: "400px", margin: "auto", marginBottom: "2rem" }}
+        style={{ width: "400px", marginBottom: "2rem" }}
       >
         {tasks.map((task, i) => (
           <option value={task} key={task}>{`Task ${i + 1}: ${task}`}</option>
         ))}
       </select>
-
-      <CurrentTask />
+      <fieldset style={{ height: "100%" }}>
+        <legend>{selectTask}</legend>
+        <CurrentTask />
+      </fieldset>
     </div>
   );
 }
