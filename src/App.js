@@ -8,6 +8,7 @@ import TableRenderParent from "./tasks/TableRender";
 import UserInputDetails from "./tasks/UserInputDetails";
 import DropDownSelect from "./tasks/DropDownSelect";
 import ConditionalLoginWithSideEffect from "./tasks/ConditionalLoginWithSideEffect";
+import FeedbackForm from "./tasks/FeedbackForm";
 
 function App() {
   const allTasks = {
@@ -20,6 +21,7 @@ function App() {
     "User Input Details": UserInputDetails,
     "Dropdown Select Student": DropDownSelect,
     "Conditional Login with Side Effect": ConditionalLoginWithSideEffect,
+    "Feedback Form": FeedbackForm,
   };
   const [selectTask, setSelectTask] = useState("Attendance");
 
