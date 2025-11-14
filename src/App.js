@@ -9,6 +9,7 @@ import UserInputDetails from "./tasks/UserInputDetails";
 import DropDownSelect from "./tasks/DropDownSelect";
 import ConditionalLoginWithSideEffect from "./tasks/ConditionalLoginWithSideEffect";
 import FeedbackForm from "./tasks/FeedbackForm";
+import LoginWithRoute from "./tasks/LoginWithRoute";
 
 function App() {
   const allTasks = {
@@ -22,6 +23,7 @@ function App() {
     "Dropdown Select Student": DropDownSelect,
     "Conditional Login with Side Effect": ConditionalLoginWithSideEffect,
     "Feedback Form": FeedbackForm,
+    "Login with Route": LoginWithRoute,
   };
   const [selectTask, setSelectTask] = useState("Attendance");
 
