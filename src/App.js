@@ -10,6 +10,8 @@ import DropDownSelect from "./tasks/DropDownSelect";
 import ConditionalLoginWithSideEffect from "./tasks/ConditionalLoginWithSideEffect";
 import FeedbackForm from "./tasks/FeedbackForm";
 import LoginWithRoute from "./tasks/LoginWithRoute";
+import CityAndCountryDropDownParent from "./tasks/CityAndCountryDropDown";
+import RoutingWithMultiplePages from "./tasks/RoutingWithMultiplePages";
 
 function App() {
   const allTasks = {
@@ -24,6 +26,8 @@ function App() {
     "Conditional Login with Side Effect": ConditionalLoginWithSideEffect,
     "Feedback Form": FeedbackForm,
     "Login with Route": LoginWithRoute,
+    "City and country dropdown": CityAndCountryDropDownParent,
+    "Routing with multiple Pages": RoutingWithMultiplePages,
   };
   const [selectTask, setSelectTask] = useState("Attendance");
 
